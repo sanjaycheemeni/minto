@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:minto/controller/seat_selection_controller.dart';
 import 'package:minto/utils/constants/colors.dart';
+import 'package:minto/view/screen/food_list_page.dart';
 import 'package:minto/view/widget/RestoTable.dart';
 import 'package:minto/view/widget/seat.dart';
 
@@ -58,7 +59,9 @@ class SeatSelectionPage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(FoodList());
+        },
         child: Text('Book'),
         backgroundColor: MainRed,
       ),

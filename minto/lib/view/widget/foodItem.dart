@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:minto/utils/constants/colors.dart';
 
-class UserFoodCard extends StatelessWidget {
+class MenuItem extends StatelessWidget {
   final foodName;
   final foodPrice;
   final foodImage;
   final Function()? ontap;
-  const UserFoodCard(
+  final parentContext;
+  const MenuItem(
       {required String this.foodImage,
       required String this.foodName,
       required String this.foodPrice,
       Function()? this.ontap,
-      super.key});
+      super.key,
+      required BuildContext this.parentContext});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: GestureDetector(
-        onTap: () {
-          ontap!();
-        },
+        onTap: () {},
         child: Container(
           decoration: BoxDecoration(
               color: Color.fromARGB(255, 255, 255, 255),

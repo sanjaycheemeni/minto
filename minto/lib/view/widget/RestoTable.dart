@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:minto/controller/seat_selection_controller.dart';

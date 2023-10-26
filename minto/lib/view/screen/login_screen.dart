@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:minto/controller/login_controller.dart';
 import 'package:minto/utils/constants/colors.dart';
+import 'package:minto/view/screen/seat_selection_screen.dart';
 import 'package:minto/view/widget/LoginButton.dart';
 import 'package:minto/view/widget/TextField.dart';
 
@@ -26,7 +27,7 @@ class LoginScreen extends StatelessWidget {
               //welcome back
               Center(
                 child: Text(
-                  'Welcome Back',
+                  'Minto',
                   style: TextStyle(
                       color: Colors.black87,
                       fontWeight: FontWeight.bold,
@@ -64,7 +65,9 @@ class LoginScreen extends StatelessWidget {
               Obx(() => Opacity(
                   opacity: (loginController.isLoading == true) ? 0.5 : 1,
                   child: LoginButton(
-                    onTap: () {},
+                    onTap: () {
+                      Get.off(SeatSelectionPage());
+                    },
                     text: (loginController.isLoading == true)
                         ? 'Loading...'
                         : 'Login',

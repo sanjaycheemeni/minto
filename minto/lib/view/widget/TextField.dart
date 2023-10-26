@@ -24,10 +24,10 @@ class EditTextField extends StatelessWidget {
           hintText: hintText,
           hintStyle: TextStyle(color: textFieldColor),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Mwhite),
+            borderSide: BorderSide(color: Color.fromARGB(255, 231, 231, 231)),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Mwhite),
+            borderSide: BorderSide(color: Color.fromARGB(255, 231, 231, 231)),
           ),
           fillColor: Color.fromARGB(255, 231, 231, 231),
           filled: true,

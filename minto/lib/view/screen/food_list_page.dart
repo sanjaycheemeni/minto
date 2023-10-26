@@ -26,15 +26,18 @@ class FoodList extends StatelessWidget {
           SizedBox(
             height: 25,
           ),
-          UserFoodCard(
+          MenuItem(
+              parentContext: context,
               foodImage: 'images/food1.png',
               foodName: 'Chicken Burger',
               foodPrice: '100'),
-          UserFoodCard(
+          MenuItem(
+              parentContext: context,
               foodImage: 'images/food2.png',
               foodName: 'Biriyani 2',
               foodPrice: '150'),
-          UserFoodCard(
+          MenuItem(
+              parentContext: context,
               foodImage: 'images/food1.png',
               foodName: 'Veg Burger',
               foodPrice: '100')
