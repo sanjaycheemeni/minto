@@ -85,7 +85,7 @@ class RestoTable extends StatelessWidget {
       // width: 400,
       height: 100,
       decoration: BoxDecoration(
-          color: seatInActive, borderRadius: BorderRadius.circular(4)),
+          color: tableColor, borderRadius: BorderRadius.circular(4)),
       child: const Text('Table'),
     );
   }

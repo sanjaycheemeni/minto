@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:minto/controller/seat_selection_controller.dart';
 import 'package:minto/utils/constants/colors.dart';
+import 'package:minto/view/widget/seat.dart';
 
-class RestoSeat extends StatelessWidget {
+class RestoSeat extends StatefulWidget {
   final id, tableId;
+
   final SeatSelectionController controller;
   const RestoSeat(
       {super.key,
@@ -12,24 +15,20 @@ class RestoSeat extends StatelessWidget {
       required this.controller});
 
   @override
+  State<RestoSeat> createState() => _RestoSeatState();
+}
+
+class _RestoSeatState extends State<RestoSeat> {
+  bool active = true;
+  @override
   Widget build(BuildContext context) {
-    final active = controller.table1.value.seats[id].isActive;
-    print("/////////" + active.toString());
     return GestureDetector(
-      onTap: () {
-        print(controller.table1.value.seats[id].isActive);
-        controller.selected(id, tableId);
-      },
-      child: Container(
-        margin: EdgeInsets.all(10),
-        padding: EdgeInsets.all(5),
-        width: 30,
-        height: 30,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(2),
-            color: active ? Colors.amber : Colors.red,
-            border: Border.all(color: borderColor, width: .5)),
-      ),
-    );
+        onTap: () {
+          print(active);
+          setState(() {
+            active = !active;
+          });
+        },
+        child: Seat(active: active));
   }
 }

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:minto/controller/seat_selection_controller.dart';
 import 'package:minto/utils/constants/colors.dart';
 import 'package:minto/view/widget/RestoTable.dart';
+import 'package:minto/view/widget/seat.dart';
 
 class SeatSelectionPage extends StatelessWidget {
   SeatSelectionPage({super.key});
@@ -16,7 +17,7 @@ class SeatSelectionPage extends StatelessWidget {
     double _deviceTextSize = MediaQuery.of(context).textScaleFactor;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: backgrnd,
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
@@ -29,7 +30,22 @@ class SeatSelectionPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: _deviceWidth * .13,
+            height: _deviceWidth * .09,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Seat(active: true),
+              Text('Open'),
+              SizedBox(
+                width: 10,
+              ),
+              Seat(active: false),
+              Text('Occupied'),
+            ],
+          ),
+          SizedBox(
+            height: _deviceWidth * .09,
           ),
           Obx(() => RestoTable(
                 seats: seatSelectionController.table1.value,
@@ -40,6 +56,11 @@ class SeatSelectionPage extends StatelessWidget {
                 controller: seatSelectionController,
               )),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('Book'),
+        backgroundColor: MainRed,
       ),
     );
   }

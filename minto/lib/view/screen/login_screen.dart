@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
     double _deviceTextSize = MediaQuery.of(context).textScaleFactor;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: backgrnd,
       body: SafeArea(
         child: Center(
           child: ListView(
